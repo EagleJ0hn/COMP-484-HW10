@@ -1,5 +1,6 @@
 $(function() { // Makes sure that your function is called once all the DOM elements of the page are ready to be used.
-    
+    // Display console logging examples
+    logPetInfo();
     // Called function to update the name, happiness, and weight of our pet in our HTML
     checkAndUpdatePetInfoInHtml();
   
@@ -10,13 +11,35 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.sleep-button').click(clickedSleepButton);
     $('.rename-button').click(clickedRenameButton);
   
-
   
     
   })
   
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
     var pet_info = {name:"Rex", weight: 10, happiness: 50, evolved: false, shiny: false};
+
+
+    function logPetInfo(){
+      // Log info
+      console.log("Application Started.");
+      console.info("Current pet information:", pet_info);
+      // Log Warning
+      console.warn("Dont forget to feed your pet");
+      // Log Error
+      console.error("Example error message.");
+      // Log Table
+      console.table(pet_info);
+      // Log Group
+      console.group("Gigapet Pet Information");
+      console.log("Name:", pet_info.name);
+      console.log("Weight:", pet_info.weight);
+      console.log("Happiness:", pet_info.happiness);
+      console.groupEnd();
+      // Log Custom
+      console.log("%cHello World!", "color:red; font-size: 16px; font-weight:bold;");
+
+      // console.log(pet_info.nonexistentProperty.toUpperCase());
+    }
   
     function clickedTreatButton() {
       // Increase pet happiness
@@ -32,6 +55,11 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     }
     
     function clickedPlayButton() {
+      const start = Date.now();
+
+      while (Date.now() - start < 1000){
+        
+      }
       // Increase pet happiness
       pet_info.happiness += 15;
       // Decrease pet weight
