@@ -55,11 +55,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     }
     
     function clickedPlayButton() {
-      const start = Date.now();
 
-      while (Date.now() - start < 1000){
-        
-      }
       // Increase pet happiness
       pet_info.happiness += 15;
       // Decrease pet weight
